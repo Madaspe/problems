@@ -15,9 +15,10 @@ len_cur = 0
 for i in input_data[1:]:
     if i > pre:
         len_cur += 1
-        print(i)
+        print(i, end=' ')
     else:
         len_cur = 1
+        print()
 
     len_max = max(len_cur, len_max)
     pre = i
