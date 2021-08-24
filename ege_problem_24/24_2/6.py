@@ -5,6 +5,6 @@
 with open("input_files/24-6.txt", 'r') as file:
     input_data = file.read()
 
-input_data = input_data.replace("STOCK", "")
+input_data = input_data.replace("STOCK", " ")
 
 print(input_data.count("OCK"))

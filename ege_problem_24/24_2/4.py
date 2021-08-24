@@ -13,11 +13,11 @@ local_mins = []
 
 for index in range(1, len(input_data) - 1):
     if input_data[index] < input_data[index - 1] and input_data[index] < input_data[index + 1]:
-        local_mins.append(input_data[index])
+        local_mins.append(index)
 
-minn = 9**99
+minn = 0
 for index in range(1, len(local_mins) - 1):
-    minn = min(local_mins[index] - local_mins[index - 1], local_mins[index] - local_mins[index + 1], minn)
+    minn = max(local_mins[index] - local_mins[index - 1], local_mins[index] - local_mins[index + 1], minn)
 
 print(minn)
 

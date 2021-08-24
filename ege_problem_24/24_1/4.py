@@ -6,17 +6,17 @@
 # // c) 1-й символ Ц совпадает с третьим.
 
 
-
 def count(string):
     result = 0
     for char_index in range(2, len(string)):
         if string[char_index] != string[char_index - 1] \
-            and string[char_index] in ['A', 'C', 'D'] \
-            and string[char_index - 1] != string[char_index] \
-            and string[char_index - 1] in ['B', 'D', 'E'] \
-            and string[char_index - 2] == string[char_index]:
+                and string[char_index] in ['A', 'C', 'D'] \
+                and string[char_index - 1] != string[char_index] \
+                and string[char_index - 1] in ['B', 'D', 'E'] \
+                and string[char_index - 2] == string[char_index]:
             result += 1
     return result
+
 
 def tests():
     print(count("ABA") == 1,
@@ -24,7 +24,7 @@ def tests():
           count("DBDEDBDB") == 3,
           count("ABCDEFFEDCBA") == 0,
           count("EABAADAAEACBCCDCCECDBDDDDDEDE") == 8,
-            )
+          )
 
 
 def solve(filename):
