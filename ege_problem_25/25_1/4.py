@@ -28,5 +28,5 @@ for num in range(194441, 196500 + 1):
     divisors = get_all_divisors(num)
 
     if len(divisors) % 2 != 0:
-        print(index, num, int(sqrt(num)))
+        print(index, num,len(divisors), int(sqrt(num)))
         index += 1
