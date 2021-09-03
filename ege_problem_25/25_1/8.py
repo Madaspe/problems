@@ -22,11 +22,17 @@ def get_all_divisors(number):
 
 def is_prime(number):
     return True if len(get_all_divisors(number)) == 2 else False
-
-i=1
-print()
-for num in range(2532000, 2532160+1):
-    if is_prime(num):
-        if i in list(range(1, 100, 3)):
-            print(i, num)
-        i += 1
+maxx = 0
+for num in range(125697, 190234+1):
+    divisors = get_all_divisors(num)
+    prime_divisors = []
+    for i in divisors:
+        if is_prime(i):
+            prime_divisors.append(i)
+    print(len(prime_divisors))
+    for i, i1 in enumerate(prime_divisors):
+        for j,j1 in enumerate(prime_divisors):
+            if i1 != j1 and i1 * j1 == num and i > j:
+                maxx += 1
+    # maxx = max(cnt, maxx)
+print(maxx)
