@@ -1,4 +1,3 @@
-#
 # // Рассмотрим произвольное натуральное число, представим его всеми возможными
 # // способами в виде произведения двух натуральных чисел и найдём для каждого
 # // такого произведения разность сомножителей. Например, для числа 18 получим:
@@ -17,7 +16,8 @@ def get_all_divisors(number):
 
     for divisor in range(1, round(sqrt(number) + 1)):
         if number % divisor == 0:
-            divisors.append((divisor, number // divisor, abs(divisor - number / divisor)))
+            div = number // divisor
+            divisors.append((divisor, div, abs(divisor - div)))
     return list(set(divisors))
 
 

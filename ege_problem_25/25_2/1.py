@@ -18,7 +18,6 @@ def get_divisors(number):
 ans = 0
 
 for num in range(2, 2000 + 1):
-    temp = num
     divisors = list(reversed(get_divisors(num)))[1:]
     for divisor in divisors:
         if num - divisor > 0:

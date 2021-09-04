@@ -1,4 +1,3 @@
-
 # // Рассматриваются целые числа, принадлежащих числовому отрезку
 # // [523456; 578925], которые представляют собой произведение двух различных
 # // простых делителей. Найдите такое из этих чисел, у которого два простых
@@ -24,15 +23,15 @@ def is_prime(number):
 
 
 min_sum = 100 ** 10
-num_save =  100 ** 10
+num_save = 0
 prime_divisors_save = []
-for num in range(523456, 578925+1):
+for num in range(523456, 578925 + 1):
     divisors = get_all_divisors(num)
     prime_divisors = list(filter(is_prime, divisors))
 
     for i, i1 in enumerate(prime_divisors):
         for j, j1 in enumerate(prime_divisors):
-            if i != j and i1 * j1 == num and abs(i1 - j1) < min_sum and num_save > num:
+            if i < j and i != j and i1 * j1 == num and abs(i1 - j1) < min_sum and num_save < num:
                 min_sum = abs(i1 - j1)
                 num_save = num
                 prime_divisors_save = prime_divisors.copy()

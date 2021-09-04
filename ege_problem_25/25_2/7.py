@@ -26,7 +26,7 @@ for num in range(278932, 325396+1):
     for i, i1 in enumerate(prime_divisors):
         for j, j1 in enumerate(prime_divisors):
             for q, q1 in enumerate(prime_divisors):
-                if i1*j1*q1 == num and i1 % 10 == j1 % 10 == q1 % 10:
+                if i>=j>=q and i1*j1*q1 == num and i1 % 10 == j1 % 10 == q1 % 10:
                     cnt += 1
                     num_save = num
 

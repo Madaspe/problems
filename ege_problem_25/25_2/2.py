@@ -15,9 +15,16 @@ def get_divisors(number):
 
     return sorted(list(set(divisors)))
 
+def get_sum(number):
+    ans = 0
+    for i in str(number):
+        ans += int(i)
+
+    return ans
+
 answer = 0
 for i in range(4099, 26985+1):
     divisors = get_divisors(i)
     if len(divisors) == 3:
-        answer += i
+        answer += get_sum(i)
 print(answer)
