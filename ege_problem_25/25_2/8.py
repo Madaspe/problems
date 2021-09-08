@@ -25,4 +25,4 @@ for num in range(1000000, 1500000 + 1):
     divisors = list(filter(lambda x: x[2] <= 110, get_all_divisors(num)))
 
     if len(divisors) >= 3:
-        print(num, max(max(divisors)))
+        print(num, max([max(i) for i in divisors]))
